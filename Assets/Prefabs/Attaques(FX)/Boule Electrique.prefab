@@ -145,7 +145,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 138682}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   degat: 10
-  anObject: {fileID: 138682}
-  anObjCollider: {fileID: 0}
+  projectile: {fileID: 0}
+  projectileCollider: {fileID: 0}
 --- !u!114 &11471152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3351,6 +3351,10 @@ Prefab:
       propertyPath: anObject
       value: 
       objectReference: {fileID: 138682}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138682}
