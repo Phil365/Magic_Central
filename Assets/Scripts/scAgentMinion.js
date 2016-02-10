@@ -1,4 +1,13 @@
 #pragma strict
+@script RequireComponent(Animator)
+
+ /*
+ * Animateur
+ * @access public
+ * @var animateur
+ */   
+public var animateur:Animator;
+
 
 /*Mini IA - Source : http://answers.unity3d.com/questions/26177/how-to-create-a-basic-follow-ai.html */
 
@@ -116,10 +125,13 @@ function Update () {
 
     if (distance <= porteeMaxi && distance >= porteeMini){
     	agent.gameObject.transform.LookAt(cible.transform);
-    
+    	animateur.SetBool('court', false);
+
     } else if (distance <= porteeMini && distance > stop) {
 		//	avance vers l'ennemi
 		agent.SetDestination(cible.transform.position);
+		animateur.SetBool('court', true);
+
 		if(timer > tempEntreAttaque && distance <= porteeMini){
 		Attaque();
 		}

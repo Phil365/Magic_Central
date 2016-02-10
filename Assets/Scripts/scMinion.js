@@ -1,4 +1,5 @@
 #pragma strict
+@script RequireComponent(Animator)
 
 /*
  * vie des Minions
@@ -53,8 +54,16 @@ public var Hero:GameObject;
  * @access public
  * @var scGestionXP
  */   
+ private var scGestionXP:scGestionXP;
 
-private var scGestionXP:scGestionXP;
+ /*
+ * Animateur
+ * @access public
+ * @var animateur
+ */   
+public var animateur:Animator;
+
+
 
 function Start () {
 
@@ -91,7 +100,9 @@ function Update () {
 
 		scGestionXP.SendMessageUpwards("augmenterExperience", xpGagnee , SendMessageOptions.DontRequireReceiver);
 
+		animateur.SetBool('mort', true);
 		Destroy(this.gameObject);
+
 		//Si l'ennemi meurt on définit l'objet gagné aléatoirement
 		var hasard = Random.Range(1, 6);
 		switch (hasard) {
