@@ -288,7 +288,7 @@ public function PrendDamage(quantite:int)
 
 function Mort()
 {
-Application.LoadLevel (0);
+Application.LoadLevel (8);
 estMort=true;
 //playerAudio.clip = deathclip;
 //playerAudio.Play ();
