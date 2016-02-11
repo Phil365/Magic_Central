@@ -1,7 +1,7 @@
 ﻿#pragma strict
 
 function Start () {
-Time.timeScale = 1;
+//Time.timeScale = 1;
 }
 
 function Update () {
