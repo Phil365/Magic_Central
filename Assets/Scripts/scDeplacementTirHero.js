@@ -127,7 +127,7 @@ private var endommage : boolean;
  */
 
 function Start ()
- {Time.timeScale = 1;
+ {//Time.timeScale = 1;
 	 while(loopHandle){
 	 regenMana();
 	

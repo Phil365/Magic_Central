@@ -132,7 +132,7 @@ function Update () {
 		agent.SetDestination(cible.transform.position);
 		animateur.SetBool('court', true);
 
-		if(timer > tempEntreAttaque && distance <= porteeMini){
+		if(timer > tempEntreAttaque && distance <= 1){
 		Attaque();
 		}
 
