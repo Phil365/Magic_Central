@@ -1214,7 +1214,7 @@ MonoBehaviour:
   porteeMini: 10
   porteeMaxi: 10
   exclamation: {fileID: 120564}
-  degatMinion: 2
+  degatMinion: 15
 --- !u!114 &11464568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1226,10 +1226,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c9ce7e62bc15894ba9c807f083d5af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vieMinion: 10
-  manaMinion: 10
-  degatMinion: 2
-  xpGagnee: 10
+  vieMinion: 50
+  manaMinion: 20
+  degatMinion: 15
+  xpGagnee: 20
   Hero: {fileID: 0}
   animateur: {fileID: 9567286}
 --- !u!136 &13613168
