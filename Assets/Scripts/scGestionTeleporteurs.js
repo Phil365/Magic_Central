@@ -33,17 +33,17 @@ function OnTriggerEnter(trigg:Collider)
 
 	if (trigg.gameObject.tag == "teleportNiveau3") 
 	{
-		Application.LoadLevel (4);
+		Application.LoadLevel (5);
 	}
 
 	if (trigg.gameObject.tag == "teleportNiveau4") 
 	{
-		Application.LoadLevel (5);
+		Application.LoadLevel (6);
 	}
 
 	if (trigg.gameObject.tag == "teleportNiveau5") 
 	{
-		Application.LoadLevel (6);
+		Application.LoadLevel (7);
 	}
 
 
