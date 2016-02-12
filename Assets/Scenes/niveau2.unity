@@ -18955,10 +18955,14 @@ Prefab:
     - target: {fileID: 11400470, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
       propertyPath: Kaseem
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1144760963}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1144760963 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 154866, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+  m_PrefabInternal: {fileID: 1144760962}
 --- !u!1 &1146494887 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: e91cb704dcc6b234a85201b337a3027d, type: 3}
