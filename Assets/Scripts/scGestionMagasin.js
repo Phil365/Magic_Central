@@ -61,12 +61,20 @@ private var gestionInventaire:scGestionInventaire;
 private var orActuel:int;
 
 /*
- * Contient le message plus d'or
+ * Contient le messagePlusDorVie plus d'or
  * @access public
- * @var messagePlusDor
+ * @var messagePlusDorVie
  */
 
-public var messagePlusDor:GameObject;
+public var messagePlusDorVie:GameObject;
+
+/*
+ * Contient le messagePlusDorMana plus d'or
+ * @access public
+ * @var messagePlusDorMana
+ */
+
+public var messagePlusDorMana:GameObject;
 
 /*
  * Contient le bouton d'achatPotionVie à desactiver ou activer
@@ -74,7 +82,7 @@ public var messagePlusDor:GameObject;
  * @var boutonAchatPotionVie
  */
 
-public var boutonAchatPotionVie:GameObject;
+public var boutonAchatPotionVie:Button;
 
 /*
  * Contient le bouton d'achatPotionMana à desactiver ou activer
@@ -82,7 +90,7 @@ public var boutonAchatPotionVie:GameObject;
  * @var boutonAchatPotionMana
  */
 
-public var boutonAchatPotionMana:GameObject;
+public var boutonAchatPotionMana:Button;
 /*
  * Contient le script pour accéder au tir du héros pour désactiver lorsque canvas actif
  * @access private
@@ -108,6 +116,8 @@ function Start () {
 	gestionInventaire = personnage.GetComponent.<scGestionInventaire>();
 	// Recuperation du script de tir du personnage
 	tirHero = personnage.GetComponent.<scDeplacementTirHero>(); 
+	boutonAchatPotionVie.interactable=true;
+	boutonAchatPotionMana.interactable=true;
 }
 
 function Update () {
@@ -119,22 +129,26 @@ function Update () {
 */
 	//Recuperation de la variable Or du personnage
 	orActuel = gestionInventaire.orInventaire;
-	Debug.Log(Time.timeScale);
+	Debug.Log(orActuel);
 
 
 	// Si l'or est à 0 alors on active le message vous n'avez plus d'or et désactive les boutons d'achat.
-	if (orActuel <= 0 ) 
-	{
-		messagePlusDor.SetActive(true);
-		boutonAchatPotionVie.SetActive(false);
-		boutonAchatPotionMana.SetActive(false);
+	if (orActuel < 50){
+	boutonAchatPotionVie.interactable=false;
+	messagePlusDorVie.SetActive(true);
+	} else if(orActuel >=  50 ){
+	boutonAchatPotionVie.interactable=true;
+	messagePlusDorVie.SetActive(false);
 	}
-	else 
-	{
-		messagePlusDor.SetActive(false);
-		boutonAchatPotionVie.SetActive(true);
-		boutonAchatPotionMana.SetActive(true);
+	if (orActuel < 25) {
+	boutonAchatPotionMana.interactable=false;
+	messagePlusDorMana.SetActive(true);
+	}else if(orActuel >= 25){
+	boutonAchatPotionMana.interactable=true;
+	messagePlusDorMana.SetActive(false);
 	}
+		
+	
 }
 
 
@@ -145,14 +159,13 @@ function fermerPanneauPotions()
     panneauPotions.SetActive(false);
      Time.timeScale = 1;
      trig = false;
-   tirHero.enabled=true;//active le tir du héro
+ 	 tirHero.enabled=true;//active le tir du héro
 }
 
 function achatPotionVie() 
 {
 
 		// Envoi de messages pour diminuer l'or du personnage ainsi qu'augmenter le nombre de potions de vie à sa disposition.
-
 		gestionInventaire.SendMessageUpwards("diminutionOrVie" , prixPotionVie, SendMessageOptions.DontRequireReceiver );
 		gestionInventaire.SendMessageUpwards("augmenterPotionVie" , nbPotion, SendMessageOptions.DontRequireReceiver );
 
