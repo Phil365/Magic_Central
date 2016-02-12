@@ -127,7 +127,7 @@ private var endommage : boolean;
  */
 
 function Start ()
- {Time.timeScale = 1;
+ {//Time.timeScale = 1;
 	 while(loopHandle){
 	 regenMana();
 	
@@ -181,7 +181,9 @@ function Update(){
     ManaSlider.value = Manadisponible;
     VieSlider.value = Viedisponible;
     endommage= false;
-
+    if(Input.GetKeyDown (KeyCode.P)){ // pour reset les player pref pour test
+    PlayerPrefs.DeleteAll();
+    }
 }
 
 

@@ -36,25 +36,27 @@ private var deuxiemefois=true;
 
 public var personnage:GameObject;
 
-/*
- * prix de la potion de mana
+
+ /*
+ * Contient le script pour accéder au tir du héros pour désactiver lorsque canvas actif
  * @access private
- * @var prixPotionMana
+ * @var tirHero
  */
-
-
+private var tirHero:scDeplacementTirHero;
 
 
 function OnTriggerEnter(trigger:Collider) 
 {
 			trig = true;
 			activer = true;
+			//tirHero.enabled=false;//désactive le tir du héro
 }
 
 
 function Start () {
 	
-
+	// Recuperation du script de tir du personnage
+	tirHero = personnage.GetComponent.<scDeplacementTirHero>(); 
 }
 
 function Update () {
@@ -71,6 +73,7 @@ function ouvrirPanneauTuto()
     Time.timeScale = 0;
     activer = false;
     deuxiemefois = false;
+    tirHero.enabled=false;//désactive le tir du héro
 }
 
 //fermer le panneau de vente de potions
@@ -79,6 +82,7 @@ function fermerPanneauTuto()
     panneauTuto.SetActive(false);
      Time.timeScale = 1;
      trig = false;
+     tirHero.enabled=true;//active le tir du héro
     
 }
 

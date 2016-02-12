@@ -2126,6 +2126,10 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2004132, guid: dfcc47e2611b4d74091fa7930b7b2db2, type: 2}
+      propertyPath: orthographic size
+      value: 3.69
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8172474, guid: dfcc47e2611b4d74091fa7930b7b2db2, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: dfcc47e2611b4d74091fa7930b7b2db2, type: 2}
@@ -11185,7 +11189,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400456, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11461544, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
       propertyPath: ArgentTexte
@@ -11211,6 +11215,38 @@ Prefab:
       propertyPath: DamageImage
       value: 
       objectReference: {fileID: 2013931623}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 9.047629
+      objectReference: {fileID: 0}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 9.047629
+      objectReference: {fileID: 0}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 9.047629
+      objectReference: {fileID: 0}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.276
+      objectReference: {fileID: 0}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402396, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 437348, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 437348, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e9a07119597bbb74db009a9a14b10939, type: 2}
   m_IsPrefabParent: 0

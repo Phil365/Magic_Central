@@ -65,9 +65,9 @@ private var gestionMana:scDeplacementTirHero;
 function Start () {
 
 	// Variable de test
-	orInventaire = 200;
-	nbPotionsVie =0;
-	nbPotionsMana =0;
+	orInventaire = PlayerPrefs.GetInt('Or'); //va cherhcer le héros choisi dans le menu
+	nbPotionsVie =PlayerPrefs.GetInt('nbPotionsVie'); //va cherhcer le héros choisi dans le menu
+	nbPotionsMana=  PlayerPrefs.GetInt('nbPotionsMana'); //va cherhcer le héros choisi dans le menu
 }
 
 function Awake ()
@@ -84,6 +84,7 @@ function Update () {
 	if(nbPotionsMana<0){nbPotionsMana=0;}
 	gestionMana.MettreAJourTotal(nbPotionsMana);
 	gestionMana.MettreAJourTotalVie(nbPotionsVie);
+
 }
 
 function diminutionOrVie(prixPotionVie:int) 
@@ -91,7 +92,7 @@ function diminutionOrVie(prixPotionVie:int)
 	
 	orInventaire = orInventaire-prixPotionVie;
 	Debug.Log("Or :"+orInventaire);
-	// On stocke dans des players prefs car le joueur va changer de scene
+	// On stocke l'or dans des players prefs quand le joueur va changer de scene
 	PlayerPrefs.SetInt("Or", orInventaire);
 
 }
@@ -101,7 +102,7 @@ function augmenterPotionVie(nbPotion:int)
 	
 	nbPotionsVie = nbPotionsVie+nbPotion;
 	Debug.Log("Potions de Vie :" +nbPotionsVie);
-	// On stocke dans des players prefs car le joueur va changer de scene
+	// On stocke les potions de vie dans des players prefs quand le joueur va changer de scene
 	PlayerPrefs.SetInt("nbPotionsVie", nbPotionsVie);
 }
 
@@ -110,8 +111,8 @@ function diminutionOrMana(prixPotionMana:int)
 	
 	orInventaire = orInventaire-prixPotionMana;
 	Debug.Log("Or :"+orInventaire);
-	// On stocke dans des players prefs car le joueur va changer de scene
-	PlayerPrefs.SetInt("nbPotionsMana", prixPotionMana);
+	// On stocke l'or dans des players prefs quand le joueur va changer de scene
+	PlayerPrefs.SetInt("Or", orInventaire);
 
 }
 
@@ -120,8 +121,8 @@ function augmenterPotionMana(nbPotion:int)
 	
 	nbPotionsMana = nbPotionsMana+nbPotion;
 	Debug.Log("Potions de mana :" + nbPotionsMana);
-	// On stocke dans des players prefs car le joueur va changer de scene
-	PlayerPrefs.SetInt("Or", orInventaire);
+	// On stocke les potions de mana dans des players prefs quand le joueur va changer de scene
+	PlayerPrefs.SetInt("nbPotionsMana", nbPotionsMana);
 }
 
 function augmenterOr(nbOr:int) 
@@ -129,7 +130,7 @@ function augmenterOr(nbOr:int)
 	
 	orInventaire += nbOr;
 	Debug.Log("Or :" + orInventaire);
-	// On stocke dans des players prefs car le joueur va changer de scene
+	// On stocke l'or dans des players prefs quand le joueur va changer de scene
 	PlayerPrefs.SetInt("Or", orInventaire);
 }
 

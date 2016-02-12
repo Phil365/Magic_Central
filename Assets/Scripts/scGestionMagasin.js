@@ -83,14 +83,20 @@ public var boutonAchatPotionVie:GameObject;
  */
 
 public var boutonAchatPotionMana:GameObject;
-
+/*
+ * Contient le script pour accéder au tir du héros pour désactiver lorsque canvas actif
+ * @access private
+ * @var tirHero
+ */
+private var tirHero:scDeplacementTirHero;
 
 function OnTriggerEnter(trigger:Collider) 
-{
+{	
 	if (trigger.gameObject.name== 'Hero'){//Ouverture du panneau de vente de potions
+	Time.timeScale = 0;
 	  panneauPotions.SetActive(true);
-    Time.timeScale = 0;
-
+    	
+    	tirHero.enabled=false;//désactive le tir du héro
 		}	
 
 }
@@ -100,7 +106,8 @@ function Start () {
 
 	// Recuperation du script de gestion de l'inventaire du personnage
 	gestionInventaire = personnage.GetComponent.<scGestionInventaire>();
-
+	// Recuperation du script de tir du personnage
+	tirHero = personnage.GetComponent.<scDeplacementTirHero>(); 
 }
 
 function Update () {
@@ -112,7 +119,7 @@ function Update () {
 */
 	//Recuperation de la variable Or du personnage
 	orActuel = gestionInventaire.orInventaire;
-	Debug.Log(orActuel);
+	Debug.Log(Time.timeScale);
 
 
 	// Si l'or est à 0 alors on active le message vous n'avez plus d'or et désactive les boutons d'achat.
@@ -138,7 +145,7 @@ function fermerPanneauPotions()
     panneauPotions.SetActive(false);
      Time.timeScale = 1;
      trig = false;
-    
+   tirHero.enabled=true;//active le tir du héro
 }
 
 function achatPotionVie() 
